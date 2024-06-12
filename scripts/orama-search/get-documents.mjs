@@ -63,6 +63,7 @@ export const siteContent = [...pageData, ...apiData]
 
     const siteSection = pathname.split('/').shift();
     const subSections = splitIntoSections(markdownContent);
+    console.log(siteSection)
 
     return subSections.map(section => {
       return {
