@@ -216,7 +216,6 @@ jobs:
         # We don't need to post the Jest Coverage comment on Crowdin PRs and Dependabot PRs
         # as in general they introduce no changes to the Unit Tests and the Codebase
         # We reuse the checks from the Chromatic Deploy step as they're the same conditions
-        if: steps.chromatic-deploy.outcome == 'success'
         # This comments the current Jest Coverage Report containing JUnit XML reports
         # and a Code Coverage Summary
         uses: MishaKav/jest-coverage-comment@434e6d2d37116d23d812809b61d499639842fa3b # v1.0.26
