@@ -8,13 +8,17 @@ import {
   getAllLocaleCodes,
 } from '@node-core/website-i18n';
 
+import { DISABLE_STATIC_EXPORT_LOCALE } from './next.constants.mjs';
+
 // As set of available and enabled locales for the website
 // This is used for allowing us to redirect the user to any
 // of the available locales that we have enabled on the website
 const availableLocales = getAvailableLocales();
 
 // This gives an easy way of accessing all available locale codes
-const availableLocaleCodes = getAvailableLocaleCodes();
+const availableLocaleCodes = DISABLE_STATIC_EXPORT_LOCALE
+  ? [getDefaultLocale().code]
+  : getAvailableLocaleCodes();
 
 // This provides the default locale information for the Next.js Application
 // This is marked by the unique `locale.default` property on the `en` locale
