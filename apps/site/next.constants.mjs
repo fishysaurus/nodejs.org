@@ -36,6 +36,13 @@ export const ENABLE_STATIC_EXPORT =
   process.env.NEXT_PUBLIC_STATIC_EXPORT === true;
 
 /**
+ *
+ */
+export const DISABLE_STATIC_EXPORT_LOCALE =
+  process.env.NEXT_PUBLIC_STATIC_EXPORT_LOCALE === 'false' ||
+  process.env.NEXT_PUBLIC_STATIC_EXPORT_LOCALE === false;
+
+/**
  * This is used for any place that requires the full canonical URL path for the Node.js Website (and its deployment), such as for example, the Node.js RSS Feed.
  *
  * This variable can either come from the Vercel Deployment as `NEXT_PUBLIC_VERCEL_URL` or from the `NEXT_PUBLIC_BASE_URL` Environment Variable that is manually defined
@@ -187,9 +194,3 @@ export const ORAMA_CLOUD_API_KEY =
  * Note: This has no NEXT_PUBLIC prefix as it should not be exposed to the Browser.
  */
 export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
-
-/**
- * The resource we point people to when discussing internationalization efforts.
- */
-export const TRANSLATION_URL =
-  'https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md#how-to-translate';
