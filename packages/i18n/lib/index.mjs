@@ -2,6 +2,7 @@
 
 import localeConfig from '@node-core/website-i18n/config.json' with { type: 'json' };
 
+
 /**
  * Imports a locale when exists from the locales directory
  *
